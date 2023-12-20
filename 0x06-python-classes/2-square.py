@@ -1,9 +1,11 @@
 #!/usr/bin/python3
 
-class Square:
-    """
+"""
     This is the Square class.
     """
+
+class Square:
+
     def __init__(self, size=0):
         """
         This is the constructor for the Square class.
