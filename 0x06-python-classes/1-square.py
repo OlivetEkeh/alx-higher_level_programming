@@ -1,14 +1,17 @@
 #!/usr/bin/python3
 
-class Square:
-    """
-    This is the Square class.
-    """
-    def __init__(self, size):
-        """
-        This is the constructor for the Square class.
+"""This is the square class"""
 
-        Parameters:
-        - size (int): The size of the square.
+
+class Square:
+    """Square class that defines a square by: (based on 0-square.py)"""
+    def __init__(self, size):
+        """__init__
+        The init method is like a constructor, it initializes the class
+        with the size value of the square
+
+        Attributes:
+            size: the size of the square
         """
+
         self.__size = size
