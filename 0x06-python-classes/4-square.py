@@ -29,7 +29,7 @@ class Square:
 
     @property
     def size(self):
-        """Getter method to retrieve the value of the private attribute `size`."""
+        """Getter method to retrieve the value of attribute `size`."""
         return self.__size
 
     @size.setter
