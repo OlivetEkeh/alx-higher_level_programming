@@ -1,24 +1,27 @@
 #!/usr/bin/python3
 
-"""
-    This is the Square class.
-    """
+"""This is the square class"""
+
 
 class Square:
-
+    """the Square class that defines a square by: (based on 1-square.py)"""
     def __init__(self, size=0):
-        """
-        This is the constructor for the Square class.
+        """__init__
+        The init method is like a constructor, it initializes the class
+        with the size value of the square
 
-        Parameters:
-        - size (int, optional): The size of the square. Default is 0.
+        Attributes:
+            size(int): the size of the square
+
+        Raises:
+        TypeError: if size is not an integer
+        ValueError: if size is less than 0
         """
-        self.__size = size
 
         if type(size) is not int:
-            raise TypeError("size must be an integer")
+            raise TypeError('size must be an integer')
 
         if size < 0:
-            raise ValueError("size must be >= 0")
+            raise ValueError('size must be >= 0')
 
         self.__size = size
