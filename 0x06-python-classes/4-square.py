@@ -1,53 +1,52 @@
 #!/usr/bin/python3
 
-class Square:
-    """
-    This is the Square class.
-    """
-    def __init__(self, size=0):
-        """
-        This is the constructor for the Square class.
+"""This is the square class"""
 
-        Parameters:
-        - size (int, optional): The size of the square. Default is 0.
+
+class Square:
+    """Square class that defines a square by: (based on 1-square.py)"""
+    def __init__(self, size=0):
+        """Initializer for the Square class.
+
+        Args:
+            size (int, optional): The size of the square. Default is 0.
+
+        Raises:
+            TypeError: If size is not an integer.
+            ValueError: If size is less than 0.
         """
+        if not isinstance(size, int):
+            raise TypeError('size must be an integer')
+
+        if size < 0:
+            raise ValueError('size must be >= 0')
+
         self.__size = size
+
+    def area(self):
+        """Calculate and return the area of the square."""
+        return self.__size * self.__size
 
     @property
     def size(self):
-        """
-        Getter method for retrieving the size.
-
-        Returns:
-        - int: The size of the square.
-        """
+        """Getter method to retrieve the value of the private attribute `size`."""
         return self.__size
 
     @size.setter
     def size(self, value):
-        """
-        Setter method for setting the size.
+        """Setter method to set the value of the private attribute `size`.
 
-        Parameters:
-        - value (int): The size to set.
+        Args:
+            value (int): The size to set.
 
         Raises:
-        - TypeError: If value is not an integer.
-        - ValueError: If value is less than 0.
+            TypeError: If value is not an integer.
+            ValueError: If value is less than 0.
         """
         if not isinstance(value, int):
-            raise TypeError("size must be an integer")
+            raise TypeError('size must be an integer')
 
         if value < 0:
-            raise ValueError("size must be >= 0")
+            raise ValueError('size must be >= 0')
 
         self.__size = value
-
-    def area(self):
-        """
-        Public instance method to calculate and return the current square area.
-
-        Returns:
-        - int: The area of the square.
-        """
-        return self.__size ** 2

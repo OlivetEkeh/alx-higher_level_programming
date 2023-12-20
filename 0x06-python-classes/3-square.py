@@ -4,7 +4,7 @@
 
 
 class Square:
-    """Square class that defines a square by: (based on 1-square.py)"""
+    """The Square class that defines a square by: (based on 1-square.py)"""
     def __init__(self, size=0):
         """__init__
         The init method is like a constructor, it initializes the class
