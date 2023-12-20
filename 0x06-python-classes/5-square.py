@@ -2,6 +2,7 @@
 
 """Defines the Square class."""
 
+
 class Square:
     """
     Represents a square.
@@ -22,7 +23,7 @@ class Square:
             size (int, optional): The size of the square. Default is 0.
         """
 
-        if type(size) is not int:
+        if not isinstance(size, int):
             raise TypeError('size must be an integer')
 
         if size < 0:
@@ -62,7 +63,7 @@ class Square:
             ValueError: If value is less than 0.
         """
 
-        if type(value) is not int:
+        if not isinstance(value, int):
             raise TypeError('size must be an integer')
 
         if value < 0:
