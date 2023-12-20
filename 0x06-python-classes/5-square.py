@@ -11,6 +11,12 @@ class Square:
         Parameters:
         - size (int, optional): The size of the square. Default is 0.
         """
+        if type(size) is not int:
+            raise TypeError('size must be an integer')
+
+        if size < 0:
+            raise ValueError('size must be >= 0')
+
         self.__size = size
 
     @property
@@ -61,5 +67,6 @@ class Square:
         if self.__size == 0:
             print()
         else:
-            for _ in range(self.__size):
+            for i in range(self.__size):
                 print("#" * self.__size)
+
