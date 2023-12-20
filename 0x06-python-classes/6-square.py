@@ -1,16 +1,31 @@
 #!/usr/bin/python3
 
+"""Defines the Square class."""
+
+
 class Square:
     """
-    This is the Square class.
+    Represents a square.
+
+    Attributes:
+        __size (int): The size of a side of the square.
+        __position (tuple): The position of the square.
     """
+
     def __init__(self, size=0, position=(0, 0)):
         """
-        This is the constructor for the Square class.
+        Initializes a square.
 
-        Parameters:
-        - size (int, optional): The size of the square. Default is 0.
-        - position (tuple, optional): The position of the square. Default is (0, 0).
+        Args:
+            size (int, optional):side of the square. Defaults to 0.
+            position (tuple, optional): position of square. Defaults (0, 0).
+
+        Raises:
+            TypeError: If size is not integer, pos not tuple of 2 pos int.
+            ValueError: If size less than 0
+
+        Returns:
+            None
         """
         self.size = size
         self.position = position
@@ -18,74 +33,84 @@ class Square:
     @property
     def size(self):
         """
-        Getter method for retrieving the size.
+        Retrieves the size of the square.
 
         Returns:
-        - int: The size of the square.
+            int: The size of a side of the square.
         """
         return self.__size
 
     @size.setter
     def size(self, value):
         """
-        Setter method for setting the size.
+        Sets the size of the square.
 
-        Parameters:
-        - value (int): The size to set.
+        Args:
+            value (int): The size of a side of the square.
 
         Raises:
-        - TypeError: If value is not an integer.
-        - ValueError: If value is less than 0.
+            TypeError: If value is not an integer.
+            ValueError: If value is less than 0.
+
+        Returns:
+            None
         """
         if not isinstance(value, int):
             raise TypeError("size must be an integer")
-
         if value < 0:
             raise ValueError("size must be >= 0")
-
         self.__size = value
 
     @property
     def position(self):
         """
-        Getter method for retrieving the position.
+        Retrieves the position of the square.
 
         Returns:
-        - tuple: The position of the square.
+            tuple: The position of the square.
         """
         return self.__position
 
     @position.setter
     def position(self, value):
         """
-        Setter method for setting the position.
+        Sets the position of the square.
 
-        Parameters:
-        - value (tuple): The position to set.
+        Args:
+            value (tuple): The position of the square.
 
         Raises:
-        - TypeError: If value is not a tuple of 2 positive integers.
-        """
-        if not isinstance(value, tuple) or len(value) != 2 or not all(isinstance(x, int) and x >= 0 for x in value):
-            raise TypeError("position must be a tuple of 2 positive integers")
+            TypeError: If value is not a tuple.
+            ValueError: If value is not a tuple of 2 positive integers.
 
+        Returns:
+            None
+        """
+        if not isinstance(value, tuple) or len(value) != 2:
+            raise TypeError("position must be a tuple of 2 positive integers")
+        if any(not isinstance(coord, int) or coord < 0 for coord in value):
+            raise ValueError("position must be a tuple of 2 positive integers")
         self.__position = value
 
     def area(self):
         """
-        Public instance method to calculate and return the current square area.
+        Calculates the area of the square.
 
         Returns:
-        - int: The area of the square.
+            int: The area of the square.
         """
         return self.__size ** 2
 
     def my_print(self):
         """
-        Public instance method to print the square with the character #.
+        Prints the square with the character '#'.
 
         If size is equal to 0, prints an empty line.
-        Position should be used by using space - Don’t fill lines by spaces when position[1] > 0.
+        Uses the position attribute to determine
+        the starting position of the square.
+
+        Returns:
+            None
         """
         if self.__size == 0:
             print()
