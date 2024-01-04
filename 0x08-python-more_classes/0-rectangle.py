@@ -2,6 +2,7 @@
 
 """ This module defines a Rectangle class """
 
+
 class Rectangle:
     """ An empty rectangle class """
     pass
