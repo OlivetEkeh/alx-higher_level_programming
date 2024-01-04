@@ -1,0 +1,62 @@
+i"""
+=======================
+  print_square Function
+=======================
+
+Import Module
+=======================
+    >>> print_square = __import__('4-print_square').print_square
+
+Tests
+=======================
+
+Normal Use
+-----------------------
+0. Print a square of size 4:
+    >>> print_square(4)
+    ####
+    ####
+    ####
+    ####
+
+1. Print a square of size 10:
+    >>> print_square(10)
+    ##########
+    ##########
+    ##########
+    ##########
+    ##########
+    ##########
+    ##########
+    ##########
+    ##########
+    ##########
+
+2. Print an empty square:
+    >>> print_square(0)
+    (no output)
+
+3. Print a square of size 1:
+    >>> print_square(1)
+    #
+
+Errors
+-----------------------
+4. Size is not an integer:
+    >>> try:
+    ...     print_square("not an integer")
+    ... except Exception as e:
+    ...     print(e)
+    Traceback (most recent call last):
+      ...
+    TypeError: size must be an integer
+
+5. Size is less than 0:
+    >>> try:
+    ...     print_square(-1)
+    ... except Exception as e:
+    ...     print(e)
+    Traceback (most recent call last):
+      ...
+    ValueError: size must be >= 0
+"""

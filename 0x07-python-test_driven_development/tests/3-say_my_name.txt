@@ -1,0 +1,41 @@
+"""
+======================
+ say_my_name Function
+======================
+
+Import Module
+=======================
+    >>> say_my_name = __import__('3-say_my_name').say_my_name
+
+Tests
+=======================
+
+Normal Use
+-----------------------
+0. Print full name:
+    >>> say_my_name("John", "Smith")
+    My name is John Smith
+
+1. Print first name only:
+    >>> say_my_name("Walter")
+    My name is Walter
+
+2. Another full name:
+    >>> say_my_name("Bob", "Johnson")
+    My name is Bob Johnson
+
+Errors
+-----------------------
+3. First name is not a string:
+    >>> say_my_name(12, "White")
+    Traceback (most recent call last):
+      ...
+    TypeError: first_name must be a string or last_name must be a string
+
+4. Last name is not a string:
+    >>> say_my_name("John", 42)
+    Traceback (most recent call last):
+      ...
+    TypeError: first_name must be a string or last_name must be a string
+"""
+

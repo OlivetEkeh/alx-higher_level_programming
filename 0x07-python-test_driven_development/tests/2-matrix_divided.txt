@@ -1,0 +1,86 @@
+"""
+=======================
+ Matrix Division Tests
+=======================
+
+Import Module
+=======================
+    >>> matrix_divided = __import__('2-matrix_divided').matrix_divided
+
+Tests
+=======================
+
+Normal Use
+-----------------------
+0. Regular division:
+    >>> matrix = [
+    ...     [1, 2, 3],
+    ...     [4, 5, 6]
+    ... ]
+    >>> matrix_divided(matrix, 3)
+    [[0.33, 0.67, 1.0], [1.33, 1.67, 2.0]]
+
+1. Another regular division:
+    >>> matrix = [
+    ...     [10, 20, 30],
+    ...     [40, 50, 60]
+    ... ]
+    >>> matrix_divided(matrix, 2)
+    [[5.0, 10.0, 15.0], [20.0, 25.0, 30.0]]
+
+Edge Cases
+-----------------------
+2. Division by 1:
+    >>> matrix = [
+    ...     [5, 10, 15],
+    ...     [20, 25, 30]
+    ... ]
+    >>> matrix_divided(matrix, 1)
+    [[5.0, 10.0, 15.0], [20.0, 25.0, 30.0]]
+
+3. Division by a decimal:
+    >>> matrix = [
+    ...     [3, 6, 9],
+    ...     [12, 15, 18]
+    ... ]
+    >>> matrix_divided(matrix, 2.5)
+    [[1.2, 2.4, 3.6], [4.8, 6.0, 7.2]]
+
+Errors
+-----------------------
+4. Matrix is not a list of lists:
+    >>> matrix_divided(123, 3)
+    Traceback (most recent call last):
+      ...
+    TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+5. Rows have different sizes:
+    >>> matrix = [
+    ...     [1, 2, 3],
+    ...     [4, 5]
+    ... ]
+    >>> matrix_divided(matrix, 3)
+    Traceback (most recent call last):
+      ...
+    TypeError: Each row of the matrix must have the same size
+
+6. Division by zero:
+    >>> matrix = [
+    ...     [1, 2, 3],
+    ...     [4, 5, 6]
+    ... ]
+    >>> matrix_divided(matrix, 0)
+    Traceback (most recent call last):
+      ...
+    ZeroDivisionError: division by zero
+
+7. Divisor is not a number:
+    >>> matrix = [
+    ...     [1, 2, 3],
+    ...     [4, 5, 6]
+    ... ]
+    >>> matrix_divided(matrix, "three")
+    Traceback (most recent call last):
+      ...
+    TypeError: div must be a number
+"""
