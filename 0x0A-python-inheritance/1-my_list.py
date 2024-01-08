@@ -4,9 +4,8 @@
 
 
 class MyList(list):
-    """A class that inherits from list 
-    with an additional method."""
-
+    """ Inherits from python list
+    and printd the list in sorted order """
 
     def print_sorted(self):
         print(sorted(self))
