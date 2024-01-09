@@ -4,8 +4,7 @@
 
 
 def read_file(filename=""):
-    """reads a text"""
-
+    """reads a text and prints it out to stout"""
     with open(filename, 'r', encoding='utf-8') as file:
         content = file.read()
         print(content, end="")
