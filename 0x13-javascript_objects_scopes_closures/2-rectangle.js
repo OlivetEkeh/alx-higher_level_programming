@@ -1,14 +1,10 @@
 #!/usr/bin/node
 
-class Rectangles {
+module.exports = class Rectangles {
   constructor(w, h) {
-    if (w <= 0 || h <= 0 || typeof w !== 'number' || h !== 'number') {
-      return {}; //return empty object
+    if (w <= 0 || h <= 0 && typeof w !== 'number' && h !== 'number') {
+      this.width = w;
+      this.height = h;
     }
-
-    this.width = w;
-    this.height = h;
   }
 }
-
-module.exports = Rectangles;
